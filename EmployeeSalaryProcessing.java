@@ -52,21 +52,21 @@ public class EmployeeSalaryProcessing {
             return;
         }
 
-        // Task 2: Calculate and display annual salary for each employee
+       
         System.out.println("Annual Salaries:");
         for (Employee emp : employees) {
             System.out.println(emp.getName() + ": $" + emp.calculateAnnualSalary());
         }
 
-        // Task 3: Identify and display the top-performing employee
+   
         Employee topEmployee = Collections.max(employees, Comparator.comparing(Employee::calculateAnnualSalary));
         System.out.println("Top Performing Employee: " + topEmployee.getName());
 
-        // Task 4: Identify and display the employee with the least years of service
+        
         Employee leastYearsEmployee = Collections.min(employees, Comparator.comparing(Employee::getYearsOfService));
         System.out.println("Employee with Least Years of Service: " + leastYearsEmployee.getName());
 
-        // Task 6: Store employee data in output file
+  
         try (PrintWriter writer = new PrintWriter(new FileWriter("C:\\Users\\ashfx\\Downloads\\employeeSalaries.txt"))) {
             for (Employee emp : employees) {
                 writer.println("Name: " + emp.getName() + ", Annual Salary: $" + emp.calculateAnnualSalary() +
